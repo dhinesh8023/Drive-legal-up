@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="scene">
+    <div class="stars"></div>
+    <div class="road"></div>
+    <div class="beam beam-1"></div>
+    <div class="beam beam-3"></div>
+    <div class="traffic-light-deco">
+      <div class="tl-dot"></div>
+      <div class="tl-dot"></div>
+      <div class="tl-dot"></div>
+    </div>
+  </div>
+
+  <div class="page">
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+      <div class="top-bar-brand">
+        <div class="brand-icon">👮</div>
+        <h1>Police <span>Control Room</span></h1>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <span id="officerInfo" style="font-size:13px;color:var(--muted);"></span>
+        <button class="btn-logout" onclick="logout()">Log Out</button>
+      </div>
+    </div>
+
+    <!-- STATS ROW -->
+    <div class="police-stats-row" style="display:flex;gap:16px;padding:20px 32px 8px;flex-wrap:wrap;max-width:1400px;margin:0 auto;">
+      <div class="card" style="margin-bottom:0;flex:1;min-width:160px;text-align:center;padding:18px;">
+        <div class="card-title" style="margin-bottom:6px;">Total Registered</div>
+        <div id="statTotal" style="font-family:var(--font-head);font-size:36px;font-weight:700;color:var(--text);">0</div>
+      </div>
+      <div class="card" style="margin-bottom:0;flex:1;min-width:160px;text-align:center;padding:18px;">
+        <div class="card-title" style="margin-bottom:6px;">Violations Flagged</div>
+        <div id="statViolations" style="font-family:var(--font-head);font-size:36px;font-weight:700;color:var(--red);">0</div>
+      </div>
+      <div class="card" style="margin-bottom:0;flex:1;min-width:160px;text-align:center;padding:18px;">
+        <div class="card-title" style="margin-bottom:6px;">Fines Collected</div>
+        <div id="statFines" style="font-family:var(--font-head);font-size:36px;font-weight:700;color:var(--amber);">₹0</div>
+      </div>
+      <div class="card" style="margin-bottom:0;flex:1;min-width:160px;text-align:center;padding:18px;">
+        <div class="card-title" style="margin-bottom:6px;">Safe Drivers</div>
+        <div id="statSafe" style="font-family:var(--font-head);font-size:36px;font-weight:700;color:var(--green);">0</div>
+      </div>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="search-bar" style="max-width:1400px;">
+      <div class="search-wrap" style="flex:1;position:relative;">
+        <span class="icon" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:17px;pointer-events:none;">🔍</span>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search by name, vehicle no., phone, licence, or location…"
+          style="width:100%;padding:14px 14px 14px 46px;font-size:15px;"
+        >
+      </div>
+      <button class="btn-search" onclick="searchUser()">Search</button>
+    </div>
+
+    <!-- USER CARDS -->
+    <div id="userDetails" class="users-grid"></div>
+
+  </div><!-- .page -->
+
+  <script src="police-dashboard.js"></script>
+</body>
+</html>

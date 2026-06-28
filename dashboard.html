@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="scene">
+    <div class="stars"></div>
+    <div class="road"></div>
+    <div class="beam beam-1"></div>
+    <div class="beam beam-2"></div>
+    <div class="traffic-light-deco">
+      <div class="tl-dot"></div>
+      <div class="tl-dot"></div>
+      <div class="tl-dot"></div>
+    </div>
+  </div>
+
+  <div class="page">
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+      <div class="top-bar-brand">
+        <div class="brand-icon">🚦</div>
+        <h1>Drive <span>Legal</span> AI</h1>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end;">
+        <span id="welcomeMsg" style="font-size:14px;color:var(--muted);"></span>
+        <button class="btn-logout" onclick="logout()">Log Out</button>
+      </div>
+    </div>
+
+    <!-- DASHBOARD GRID -->
+    <div class="dashboard-layout">
+
+      <!-- LEFT PANEL -->
+      <div class="left-col">
+
+        <!-- Safe Driving Score -->
+        <div class="card points-card">
+          <div class="card-title">Safe Driving Score</div>
+          <div class="points-value" id="points">100</div>
+          <div class="points-label">out of 100 points</div>
+          <div class="points-bar-track">
+            <div class="points-bar-fill" id="pointsBar" style="width:100%;"></div>
+          </div>
+          <div style="margin-top:12px;font-size:12px;color:var(--muted);">
+            Maintain 90+ for <span style="color:var(--green);font-weight:600;">Excellent</span> status
+          </div>
+        </div>
+
+        <!-- GPS Location -->
+        <div class="card">
+          <div class="card-title">📍 Live GPS Location</div>
+          <div class="gps-tag" id="gps">
+            <span>📡</span>
+            <span>Acquiring location…</span>
+          </div>
+        </div>
+
+        <!-- Driver Info -->
+        <div class="card">
+          <div class="card-title">Driver Profile</div>
+          <div id="profileInfo" style="display:flex;flex-direction:column;gap:8px;"></div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT PANEL -->
+      <div class="right-col">
+
+        <!-- AI Camera -->
+        <div class="card">
+          <div class="card-title" style="margin-bottom:16px;">🤖 AI Highway Camera Detection</div>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6;">
+            Click below to simulate AI camera analysis. The system checks for helmet compliance, riding violations, and speed offences in real time.
+          </p>
+          <button class="btn-ai" onclick="runAI()">▶ Run AI Detection</button>
+        </div>
+
+        <!-- AI Output -->
+        <div class="card" id="output">
+          <span style="font-size:28px;display:block;margin-bottom:8px;">📷</span>
+          Awaiting detection — press the button above to begin
+        </div>
+
+        <!-- Traffic Rules -->
+        <div class="card rules-section">
+          <div class="card-title" style="margin-bottom:16px;">📋 Traffic Rules & Penalties</div>
+
+          <div class="rule-row">
+            <div class="rule-num">01</div>
+            <div class="rule-body">
+              <strong>Helmet Mandatory</strong>
+              <span>All riders and pillion passengers must wear a BIS-certified helmet at all times.</span>
+            </div>
+            <div class="fine-tag">₹1,000</div>
+          </div>
+
+          <div class="rule-row">
+            <div class="rule-num">02</div>
+            <div class="rule-body">
+              <strong>Triple Riding Prohibited</strong>
+              <span>Two-wheelers may not carry more than one pillion rider. Violators face heavy fines.</span>
+            </div>
+            <div class="fine-tag">₹2,000</div>
+          </div>
+
+          <div class="rule-row">
+            <div class="rule-num">03</div>
+            <div class="rule-body">
+              <strong>Speed Limits</strong>
+              <span>Urban: 50 km/h · State Highway: 80 km/h · National Highway: 100 km/h (two-wheeler).</span>
+            </div>
+            <div class="fine-tag">₹1,500</div>
+          </div>
+
+          <div class="rule-row">
+            <div class="rule-num">04</div>
+            <div class="rule-body">
+              <strong>No Mobile Phones While Driving</strong>
+              <span>Using a hand-held device while driving is illegal under Motor Vehicles Act Sec. 184.</span>
+            </div>
+            <div class="fine-tag">₹1,000</div>
+          </div>
+
+          <div class="rule-row">
+            <div class="rule-num">05</div>
+            <div class="rule-body">
+              <strong>Drunk Driving — Zero Tolerance</strong>
+              <span>BAC above 30 mg/100 ml. First offence: ₹10,000 or 6 months imprisonment.</span>
+            </div>
+            <div class="fine-tag">₹10,000</div>
+          </div>
+
+          <div class="rule-row">
+            <div class="rule-num">06</div>
+            <div class="rule-body">
+              <strong>Carry Valid Documents</strong>
+              <span>Driving licence, RC, PUC certificate, and insurance must be produced on demand.</span>
+            </div>
+            <div class="fine-tag">₹500</div>
+          </div>
+
+          <div class="rule-row">
+            <div class="rule-num">07</div>
+            <div class="rule-body">
+              <strong>Lane Discipline on Highways</strong>
+              <span>Overtaking from the left, zig-zagging between lanes, and tailgating are offences.</span>
+            </div>
+            <div class="fine-tag">₹500</div>
+          </div>
+
+          <div class="rule-row">
+            <div class="rule-num">08</div>
+            <div class="rule-body">
+              <strong>Traffic Signal Compliance</strong>
+              <span>Running a red light attracts an instant fine and three points deduction from your score.</span>
+            </div>
+            <div class="fine-tag">₹1,000</div>
+          </div>
+
+        </div><!-- .rules-section -->
+
+      </div><!-- .right-col -->
+
+    </div><!-- .dashboard-layout -->
+  </div><!-- .page -->
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

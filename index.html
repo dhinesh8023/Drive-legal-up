@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ANIMATED BACKGROUND -->
+  <div class="scene">
+    <div class="stars"></div>
+    <div class="road"></div>
+    <div class="beam beam-1"></div>
+    <div class="beam beam-2"></div>
+    <div class="beam beam-3"></div>
+    <div class="traffic-light-deco">
+      <div class="tl-dot"></div>
+      <div class="tl-dot"></div>
+      <div class="tl-dot"></div>
+    </div>
+  </div>
+
+  <div class="page login-page">
+
+    <!-- HERO -->
+    <div class="login-hero">
+      <div class="hero-badge">🚦 AI-Powered Traffic Enforcement</div>
+      <h1>Drive <span>Legal</span> AI</h1>
+      <p>Real-time highway monitoring, instant violation detection, and transparent scoring — keeping Tamil Nadu roads safe for everyone.</p>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-strip">
+      <div class="stat">
+        <span class="stat-value">12,400+</span>
+        <span class="stat-label">Registered Vehicles</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">98.6%</span>
+        <span class="stat-label">Detection Accuracy</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">340+</span>
+        <span class="stat-label">Cameras Deployed</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">24/7</span>
+        <span class="stat-label">Live Monitoring</span>
+      </div>
+    </div>
+
+    <!-- FORMS -->
+    <div class="forms-row">
+
+      <!-- USER LOGIN -->
+      <div class="login-card">
+        <div class="card-header">
+          <div class="card-icon">🚗</div>
+          <div>
+            <h2>Driver Registration</h2>
+            <small>Register to track your driving score</small>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Full Name</label>
+          <span class="icon">👤</span>
+          <input type="text" id="name" placeholder="e.g. Arjun Sharma">
+        </div>
+
+        <div class="input-group">
+          <label>Mobile Number</label>
+          <span class="icon">📞</span>
+          <input type="text" id="phone" placeholder="+91 XXXXX XXXXX">
+        </div>
+
+        <div class="input-group">
+          <label>Driving Licence No.</label>
+          <span class="icon">🪪</span>
+          <input type="text" id="license" placeholder="TN-0120XXXXXXXX">
+        </div>
+
+        <div class="input-group">
+          <label>Vehicle Registration</label>
+          <span class="icon">🚘</span>
+          <input type="text" id="vehicle" placeholder="TN 01 AB 1234">
+        </div>
+
+        <div class="input-group">
+          <label>Vehicle Model</label>
+          <span class="icon">🏍</span>
+          <input type="text" id="model" placeholder="e.g. Honda Activa 6G">
+        </div>
+
+        <button class="btn-primary" onclick="registerUser()">Enter Dashboard →</button>
+      </div>
+
+      <!-- POLICE LOGIN -->
+      <div class="login-card">
+        <div class="card-header">
+          <div class="card-icon">👮</div>
+          <div>
+            <h2>Police Access</h2>
+            <small>Authorised personnel only</small>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Officer Name</label>
+          <span class="icon">👤</span>
+          <input type="text" id="policeName" placeholder="Inspector / Sub-Inspector">
+        </div>
+
+        <div class="input-group">
+          <label>Police ID</label>
+          <span class="icon">🔑</span>
+          <input type="text" id="policeId" placeholder="TN-POLICE-XXXXX">
+        </div>
+
+        <div class="input-group">
+          <label>Station Name</label>
+          <span class="icon">🏢</span>
+          <input type="text" id="station" placeholder="e.g. Guindy Traffic Police">
+        </div>
+
+        <button class="btn-primary" onclick="policeLogin()">Access Control Room →</button>
+
+        <!-- Road safety rules teaser -->
+        <div style="margin-top:28px; padding-top:22px; border-top:1px solid var(--border);">
+          <p style="font-size:12px; color:var(--muted); font-weight:600; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:12px;">Quick Reference — Penalties</p>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div class="rule-chip"><span class="chip-icon">🪖</span><span class="chip-text">No helmet — ₹1,000 + 20 pts deducted</span></div>
+            <div class="rule-chip"><span class="chip-icon">👥</span><span class="chip-text">Triple riding — ₹2,000 fine</span></div>
+            <div class="rule-chip"><span class="chip-icon">💨</span><span class="chip-text">Over-speeding — ₹1,500 + licence risk</span></div>
+            <div class="rule-chip"><span class="chip-icon">✅</span><span class="chip-text">Clean drive — Points restored to 100</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TRAFFIC RULES FOOTER -->
+    <div class="rules-banner">
+      <h3>Know Your Traffic Rules</h3>
+      <div class="rules-grid">
+        <div class="rule-chip"><span class="chip-icon">🚦</span><span class="chip-text">Always obey traffic signals — red means stop, green means go</span></div>
+        <div class="rule-chip"><span class="chip-icon">🪖</span><span class="chip-text">Helmet is mandatory for all two-wheeler riders and pillion</span></div>
+        <div class="rule-chip"><span class="chip-icon">🚗</span><span class="chip-text">Seat belts required for driver and all passengers</span></div>
+        <div class="rule-chip"><span class="chip-icon">📱</span><span class="chip-text">No mobile phone usage while driving</span></div>
+        <div class="rule-chip"><span class="chip-icon">🍺</span><span class="chip-text">Zero tolerance for drunk driving — IPC 185</span></div>
+        <div class="rule-chip"><span class="chip-icon">🛑</span><span class="chip-text">Do not jump red lights — camera-enforced</span></div>
+        <div class="rule-chip"><span class="chip-icon">↔️</span><span class="chip-text">Lane discipline is mandatory on highways</span></div>
+        <div class="rule-chip"><span class="chip-icon">🦺</span><span class="chip-text">Keep documents ready: licence, RC, insurance</span></div>
+      </div>
+    </div>
+
+  </div><!-- .login-page -->
+
+  <script src="index.js"></script>
+</body>
+</html>
